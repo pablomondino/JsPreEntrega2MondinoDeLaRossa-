@@ -24,12 +24,13 @@ console.log(ingresar);
 
 if (ingresar) {
 
-  let valorTotalTerreno = 1000;
+  //let valorTotalTerreno = 1000;
+  let valorTotalTerreno = 0;
   let saldo = 0;
   let cantidadDeCuotas = 1;
   let entregaEnEfectivo = 0;
-  let tipologiaElegida="";
-  let eleccion=[];
+  let tipologiaElegida = "";
+  let eleccion = [];
   const tipoDeLotesDisponibles = [
     { tipologia: "a", tamano: 250, frente: 10, fondo: 25, ubicacion: "Esquina de manzana" },
     { tipologia: "b", tamano: 360, frente: 12, fondo: 30, ubicacion: "Dentro de manzana" },
@@ -43,7 +44,20 @@ if (ingresar) {
 
 
       case "1":
-        alert("Elegiste la opción 1\n  El valor total del terreno es de " + valorTotalTerreno + " pesos");
+        //alert("Elegiste la opción 1\n  El valor total del terreno es de " + valorTotalTerreno + " pesos");
+        if (valorTotalTerreno != 0) {
+         // alert("el valor total es igual a " + eleccion[0].tamano);
+          alert("Elegiste la opción 1\n  El valor total del terreno es de " + valorTotalTerreno + " pesos");
+
+          // el metro cuadrado sale 1000 pesos
+          console.log(eleccion[0].tamano)
+        } else {
+          alert("debe elegir una tipología")
+
+
+        }
+
+
 
         break;
 
@@ -98,26 +112,32 @@ if (ingresar) {
         break;
 
       case "7":
-        function filtrarPorTipologia(arr,filtro){
-          return arr.filter(elem=>elem.tipologia==filtro);
-          
-        }
-        tipologiaElegida=prompt("Elija una tipología");
-/*
-        function filtrarPorTipologia(arr,filtro){
-          return arr.filter(elem=>elem.tipologia==filtro);
-          
-        }
-  */      
-        console.log(tipologiaElegida);
-        eleccion = filtrarPorTipologia(tipoDeLotesDisponibles,tipologiaElegida);
-        console.log();
-        
-        
-        
+        function filtrarPorTipologia(arr, filtro) {
+          return arr.filter(elem => elem.tipologia == filtro);
 
-        alert(" ud eligio la tipología: "+eleccion[0].tipologia);
+        }
+        tipologiaElegida = prompt("Elija una tipología");
+        /*
+                function filtrarPorTipologia(arr,filtro){
+                  return arr.filter(elem=>elem.tipologia==filtro);
+                  
+                }
+          */
+        console.log(tipologiaElegida);
+        eleccion = filtrarPorTipologia(tipoDeLotesDisponibles, tipologiaElegida);
+        console.log();
+
+
+
+
+        alert(" ud eligio la tipología: " + eleccion[0].tipologia);
         console.log(eleccion[0]);
+        //cambie esto
+        //valorTotalTerreno=parseFloat((eleccion[0])*1000);
+        
+        valorTotalTerreno=eleccion[0].tamano*1000;
+        //nota el valor del metro cuadrado es de 1000 pesos
+        console.log(  valorTotalTerreno)
 
         //---------------------------------------------------
         /*
@@ -132,8 +152,8 @@ if (ingresar) {
 
 
 
-        
-      //elegir tipología
+
+        //elegir tipología
         /*
         cantidadDeCuotas = parseFloat(prompt("elija una opcion: \n puede elegir de 2 a 30 cuotas"));
         if (cantidadDeCuotas <= 30 && cantidadDeCuotas >= 2) {
