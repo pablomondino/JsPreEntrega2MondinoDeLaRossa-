@@ -102,14 +102,15 @@ if (ingresar) {
       case "4":
         entregaEnEfectivo = parseFloat(prompt("Elegiste la opcion 4\n ¿Cuanto es la entrega en efectivo que desea realizar?"));
 4
-        if (entregaEnEfectivo >= 200) {
+        //if (entregaEnEfectivo >= 200) {
+          if (entregaEnEfectivo >= (valorTotalTerreno*0.20)) {
           saldo = valorTotalTerreno - entregaEnEfectivo;
-          alert("Usted desea entregar " + entregaEnEfectivo + " pesos\n Tu entrega está correcta. Supera el monto minimo. ");
+          alert("Usted desea entregar " + entregaEnEfectivo + " pesos\n Tu entrega está correcta. Supera o es igual al monto minimo que es de por lo menos al 20% del valor del lote. ");
 
-          /*alert("entregando " + entregaEnEfectivo + "pesos el saldo queda en " + saldo + " pesos en 12 cuotas te quedaría en " + (saldo / 12));*/
+          
 
         } else {
-          alert(" tu entrega dede ser por lo menos igual o superio a 200 para poder financiar en cuotas")
+          alert(" Tu entrega dede ser por lo menos igual o superior al 20% del valor del lote elegido. En este caso tu lote tiene un valor de "+ valorTotalTerreno +" pesos,por lo que la entrega mínima debería ser de por lo menos "+ (valorTotalTerreno*0.20)+ " pesos")
         }
 
         break;
@@ -120,11 +121,11 @@ if (ingresar) {
         break;
 
       case "6":
-        cantidadDeCuotas = parseFloat(prompt("Elija una opcion : \n puede elegir de 2 a 30 cuotas"));
-        if (cantidadDeCuotas <= 30 && cantidadDeCuotas >= 2) {
+        cantidadDeCuotas = parseFloat(prompt("Elija una opcion : \n puede elegir de 2 a 24 cuotas"));
+        if (cantidadDeCuotas <= 24 && cantidadDeCuotas >= 2) {
           alert("elegiste " + cantidadDeCuotas + "cuotas")
         } else {
-          alert(" las cuotas deben ser entre  2 y 30 cuotas");
+          alert(" las cuotas deben ser entre  2 y 24 cuotas");
         }
 
 
@@ -156,6 +157,7 @@ if (ingresar) {
 
 }
 else {
-  alert("no podras seguir operando. LLama a nuestras oficina para solicitar un nuevo pin.")
+  alert("No podrás seguir operando. LLama a nuestra oficina para solicitar un nuevo pin.")
 
 }
+
