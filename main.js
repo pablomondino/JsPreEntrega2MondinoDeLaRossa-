@@ -110,7 +110,7 @@ if (ingresar) {
           
 
         } else {
-          alert(" Tu entrega dede ser por lo menos igual o superior al 20% del valor del lote elegido. En este caso tu lote tiene un valor de "+ valorTotalTerreno +" pesos,por lo que la entrega mínima debería ser de por lo menos "+ (valorTotalTerreno*0.20)+ " pesos")
+          alert(" Tu entrega dede ser por lo menos igual o superior al 20% del valor del lote elegido. En este caso tu lote tiene un valor de "+ valorTotalTerreno +" pesos, por lo que la entrega mínima debería ser de por lo menos "+ (valorTotalTerreno*0.20)+ " pesos")
         }
 
         break;
@@ -123,9 +123,9 @@ if (ingresar) {
       case "6":
         cantidadDeCuotas = parseFloat(prompt("Elija una opcion : \n puede elegir de 2 a 24 cuotas"));
         if (cantidadDeCuotas <= 24 && cantidadDeCuotas >= 2) {
-          alert("elegiste " + cantidadDeCuotas + "cuotas")
+          alert("elegiste " + cantidadDeCuotas + " cuotas")
         } else {
-          alert(" las cuotas deben ser entre  2 y 24 cuotas");
+          alert("las cuotas deben ser entre  2 y 24 cuotas");
         }
 
 
